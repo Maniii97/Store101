@@ -15,6 +15,7 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var etPhone : EditText
     private lateinit var btnSignUp : AppCompatButton
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -42,6 +43,6 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun onSignUpClick() {
-        TODO("Not yet implemented")
+        authenticatePassword()
     }
 }
