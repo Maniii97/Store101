@@ -87,6 +87,7 @@ class CartActivity : AppCompatActivity() {
         allProductItems = HomeScreenActivity.itemList
 
         btnCheckout.setOnClickListener {
+
             if (totPrice != 0.0) {
               //  val intent = Intent(this, CheckoutActivity::class.java)
                 intent.putExtra("cost", totPrice.toString())
