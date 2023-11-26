@@ -92,6 +92,7 @@ class CartActivity : AppCompatActivity() {
                 intent.putExtra("cost", totPrice.toString())
                 startActivity(intent)
             } else {
+
                 Toast.makeText(this, "Sorry Cart Is Empty", Toast.LENGTH_SHORT).show()
             }
         }
