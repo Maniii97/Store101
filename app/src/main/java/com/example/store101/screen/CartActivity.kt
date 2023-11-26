@@ -1,11 +1,13 @@
 package com.example.store101.screen
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.store101.R
@@ -79,7 +81,21 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun initViewsListeners() {
-        TODO("Not yet implemented")
+        cartRecyclerView = findViewById(R.id.cartRecyclerView)
+        tvTotPrice = findViewById(R.id.tvTotal)
+        btnPlaceOrder = findViewById(R.id.btnPlaceOrder)
+        allProductItems = HomeScreenActivity.itemList
+
+        btnCheckout.setOnClickListener {
+            if (totPrice != 0.0) {
+              //  val intent = Intent(this, CheckoutActivity::class.java)
+                intent.putExtra("cost", totPrice.toString())
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Sorry Cart Is Empty", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
     }
 
 
